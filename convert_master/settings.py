@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pdf2jpg.apps.Pdf2JpgConfig',
-    'jpg2pdf.apps.Jpg2PdfConfig'
+    'jpg2pdf.apps.Jpg2PdfConfig',
+    'word2pdf.apps.Word2PdfConfig'
 ]
 
 MIDDLEWARE = [
