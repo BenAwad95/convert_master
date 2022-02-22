@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('control.urls')),
     path('pdf2jpg/', include('pdf2jpg.urls')),
     path('jpg2pdf/', include('jpg2pdf.urls')),
     path('word2pdf/', include('word2pdf.urls')),

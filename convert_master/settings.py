@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'control.apps.ControlConfig',
     'pdf2jpg.apps.Pdf2JpgConfig',
     'jpg2pdf.apps.Jpg2PdfConfig',
     'word2pdf.apps.Word2PdfConfig',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'convert_master.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
