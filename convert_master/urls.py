@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pdf2jpg/', include('pdf2jpg.urls')),
     path('jpg2pdf/', include('jpg2pdf.urls')),
-    path('word2pdf/', include('word2pdf.urls'))
+    path('word2pdf/', include('word2pdf.urls')),
+    path('pdf2word/', include('pdf2word.urls'))
 ]
