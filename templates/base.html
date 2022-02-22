@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Master</title>
+</head>
+<body>
+    <ul>
+        {% for app_hume_name, app_name in apps.items %}
+            <li><a href="/{{ app_name }}">{{ app_hume_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
