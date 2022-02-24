@@ -18,7 +18,8 @@ def home(request):
         jpg = Image.open(jpg_file_path)
         converted_pdf = jpg.convert('RGB')
         converted_pdf.save(f'{settings.BASE_DIR}\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf')
-        # return redirect(reverse_lazy('jpg2pdf:thanks'))
+        url = f'\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf'
+        return render(request, 'jpg2pdf/home.html', {'form': form, 'done': True, 'url': url})
     form = JpgForm()
     return render(request, 'jpg2pdf/home.html', {'form': form})
 
