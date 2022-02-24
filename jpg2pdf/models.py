@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class Jpg2Pdf(models.Model):
+    image = models.FileField(upload_to='jpg_images/')
