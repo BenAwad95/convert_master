@@ -21,6 +21,6 @@ def home(request):
             image.save(f'{settings.BASE_DIR}\\media\\pdf2jpg-app\\jpgs\\{filename}-{count}.jpg', 'JPEG')
             urls.append(f'\\media\\pdf2jpg-app\\jpgs\\{filename}-{count}.jpg')
             count+=1
-        return render(request, 'pdf2jpg\home.html', {'form': form, 'done': True, 'url': urls})
+        return render(request, 'pdf2jpg\home.html', {'form': form, 'done': True, 'urls': urls})
     form = Pdf2jpgForm()
     return render(request, 'pdf2jpg\home.html', {'form': form})
