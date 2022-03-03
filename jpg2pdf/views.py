@@ -10,16 +10,19 @@ from .forms import JpgForm
 def home(request):
     if request.method == 'POST':
         form = JpgForm(request.POST, request.FILES)
-        image_jpg = request.FILES['image_jpg']
-        fs = FileSystemStorage()
-        jpg_file = fs.save(f'jpg2pdf-app/jpgs/{image_jpg.name}', image_jpg)
-        jpg_file_path = fs.path(jpg_file)
-        # start converting process
-        jpg = Image.open(jpg_file_path)
-        converted_pdf = jpg.convert('RGB')
-        converted_pdf.save(f'{settings.BASE_DIR}\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf')
-        url = f'\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf'
-        return render(request, 'jpg2pdf/home.html', {'form': form, 'done': True, 'url': url})
+        if form.is_valid():
+            image_jpg = request.FILES['image_jpg']
+            fs = FileSystemStorage()
+            jpg_file = fs.save(f'jpg2pdf-app/jpgs/{image_jpg.name}', image_jpg)
+            jpg_file_path = fs.path(jpg_file)
+            # start converting process
+            jpg = Image.open(jpg_file_path)
+            converted_pdf = jpg.convert('RGB')
+            converted_pdf.save(f'{settings.BASE_DIR}\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf')
+            url = f'\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf'
+            return render(request, 'jpg2pdf/home.html', {'form': form, 'done': True, 'url': url})
+        else:
+            return render(request, 'jpg2pdf/home.html', {'form': form, })
     form = JpgForm()
     return render(request, 'jpg2pdf/home.html', {'form': form})
 
