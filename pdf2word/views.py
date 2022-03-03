@@ -8,17 +8,20 @@ from .forms import Pdf2wordForm
 def home(request):
     if request.method == 'POST':
         form = Pdf2wordForm(request.POST, request.FILES)
-        fs = FileSystemStorage()
-        pdf_file = request.FILES['pdf_file']
-        filename = pdf_file.name[:-3]
-        pdf_file = fs.save(f'pdf2word-app\\pdfs\\{filename}.pdf', pdf_file)
-        pdf_file_path = fs.path(pdf_file)
-        # start convert
-        cv = Converter(pdf_file_path)
-        cv.convert(f'{settings.BASE_DIR}\\media\\pdf2word-app\\docxs\\{filename}.docx')
-        cv.close()
-        url = f"media\\pdf2word-app\\docxs\\{filename}.docx"
-        return render(request, 'pdf2word\\home.html', {'form': form, 'done': True, 'url': url})
+        if form.is_valid():
+            fs = FileSystemStorage()
+            pdf_file = request.FILES['pdf_file']
+            filename = pdf_file.name[:-3]
+            pdf_file = fs.save(f'pdf2word-app\\pdfs\\{filename}.pdf', pdf_file)
+            pdf_file_path = fs.path(pdf_file)
+            # start convert
+            cv = Converter(pdf_file_path)
+            cv.convert(f'{settings.BASE_DIR}\\media\\pdf2word-app\\docxs\\{filename}.docx')
+            cv.close()
+            url = f"media\\pdf2word-app\\docxs\\{filename}.docx"
+            return render(request, 'pdf2word\\home.html', {'form': form, 'done': True, 'url': url})
+        else:
+            return render(request, 'pdf2word\\home.html', {'form': form})
     form = Pdf2wordForm()
     return render(request, 'pdf2word\\home.html', {'form': form})
 
