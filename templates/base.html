@@ -7,21 +7,24 @@
     <title>Convert Master</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form_style.css' %}">
 </head>
 <body>
     <header class="center-flex">
         <h1>Convert Master</h1>
     </header>
     <main>
-        <div id="apps-list">
-            <ul>
-                {% for app_hume_name, app_name in apps.items %}
-                    <li class="center-flex" >
-                        <a href="/{{ app_name }}">{{ app_hume_name }}</as>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        {% block content %}
+            <div id="apps-list">
+                <ul>
+                    {% for app_hume_name, app_name in apps.items %}
+                        <li class="center-flex" >
+                            <a href="/{{ app_name }}">{{ app_hume_name }}</as>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endblock content %}
     </main>
     <footer>
 
