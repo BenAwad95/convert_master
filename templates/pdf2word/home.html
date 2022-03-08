@@ -6,7 +6,12 @@
         <header>
             <h2>File form</h2>
         </header>
-        {{ form.as_p }}
+        {% for f in form %}
+        <p>
+            {{ f }}
+            <label for="id_{{ f.name }}">{{f.label}}</label>
+        </p>
+        {% endfor %}
         <button type="submit">Convert</button>
     </form>
     {% if done %}

@@ -32,7 +32,7 @@ form p label {
     margin-bottom: 1rem;
 }
 
-form p input[type='file']#pdf_file{
+form p input[type='file']{
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
