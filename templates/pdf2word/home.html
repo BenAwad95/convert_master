@@ -9,7 +9,7 @@
         {% for f in form %}
         <p>
             {{ f }}
-            <label for="id_{{ f.name }}">{{f.label}}</label>
+            <label for="id_{{ f.name }}">Select {{f.label}}...</label>
         </p>
         {% endfor %}
         <button type="submit">Convert</button>
