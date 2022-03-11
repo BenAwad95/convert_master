@@ -19,7 +19,8 @@ header{
 }
 
 main{
-    background-color: #1c768f;
+    /* background-color: #1c768f; */
+    background-color: #fbf3f2;
     height: 70vh;
 }
 
@@ -38,15 +39,24 @@ main{
 #apps-list ul li {
     width: 200px;
     height: 200px;
-    background-color: #fa991c;
+    background-color: #1c768f;
     margin: 0 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    border: 2px solid #fbf3f2;
+    /* border: 4px solid #fa991c; */
+}
+
+#apps-list ul li:hover{
+    border: 4px solid #fa991c;
+    cursor: pointer;
 }
 
 #apps-list ul li a{
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+}
 
+footer{
+    height: 10vh;
+    background-color: #032539;
 }
