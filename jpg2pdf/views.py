@@ -20,7 +20,7 @@ def home(request):
             converted_pdf = jpg.convert('RGB')
             converted_pdf.save(f'{settings.BASE_DIR}\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf')
             url = f'\\media\\jpg2pdf-app\\pdfs\\{image_jpg.name[:-4]}.pdf'
-            return render(request, 'jpg2pdf/home.html', {'form': form, 'done': True, 'url': url})
+            return render(request, 'thanks.html', {'form': form, 'done': True, 'url': url})
         else:
             return render(request, 'jpg2pdf/home.html', {'form': form, })
     form = JpgForm()

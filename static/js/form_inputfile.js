@@ -1,4 +1,4 @@
-const fileInput = document.getElementById('pdf_file')
+const fileInput = document.querySelectorAll('input')[1]
 
 fileInput.addEventListener('change', (e) => {
     let label = fileInput.nextElementSibling
