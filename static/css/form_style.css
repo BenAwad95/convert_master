@@ -1,0 +1,81 @@
+main{
+    background-color: #fbf3f2;
+    padding-top: 5rem;
+}
+form{
+    border: 2px solid #fff;
+    background-color: #1c768f;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    min-width: 350px;
+}
+
+form header{
+    height: fit-content;
+    padding: 1rem;
+    border-bottom: 3px solid #fbf3f2;
+}
+
+
+form p {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fbf3f2;
+}
+
+form p label {
+    margin-bottom: 1rem;
+}
+
+form p input[type='file']{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+form p input[type='file'] + label{
+    font-size: 1em;
+    font-weight: 700;
+    color: #1c768f;
+    background-color: #fbf3f2;
+    display: inline-block;
+    width: fit-content;
+    padding: 0 0.2rem;
+    cursor: pointer;
+}
+
+form p input[type='file']:focus + label,
+form p input[type='file'] + label:hover {
+    background-color: #032539;
+    color: #fbf3f2;
+}
+/* keyboard navigation */
+form p input[type='file']:focus + label {
+	outline: 1px dotted #fbf3f2;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+form p label{
+    color: hsl(193, 67%, 84%);
+    font-size: small;
+}
+
+form button{
+    margin: auto;
+    width: 50%;
+    display: block;
+    background-color: #fa991c;
+    border: 1px solid #fbf3f2;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: medium;
+    cursor: pointer;
+}
