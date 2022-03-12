@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Thank you</h1>
+    <div class="container">
+        <h2>Thank you for using our app!</h2>
+        <p>Your files ready for downloading</p>
+        <ul>
+            {% for url in urls %}
+                <li><a href="{{ url }}" download>Download</a></li>
+            {% endfor %}
+        </ul>
+        <a class="btn-primary" href="{% url 'control:home' %}">Start Over</a>
+    </div>
 {% endblock content %}
