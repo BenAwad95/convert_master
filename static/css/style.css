@@ -60,3 +60,50 @@ footer{
     height: 10vh;
     background-color: #032539;
 }
+
+.container{
+    width: 400px;
+    margin: auto;
+    height: fit-content;
+    background-color: #1c768f;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.container h2{
+    margin-bottom: 1rem;
+}
+
+.container ul{
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.container ul li {
+    display: block;
+}
+
+.container .btn-primary{
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    display: block;
+    background-color: #032539;
+    color: #fbf3f2;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.container .btn-primary:hover{
+    background-color: #fbf3f2;
+    color: #032539;
+    cursor: pointer;
+}
