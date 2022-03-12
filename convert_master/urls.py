@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('control.urls')),
     path('pdf2jpg/', include('pdf2jpg.urls')),
     path('jpg2pdf/', include('jpg2pdf.urls')),
     path('word2pdf/', include('word2pdf.urls')),
-    path('pdf2word/', include('pdf2word.urls'))
+    path('pdf2word/', include('pdf2word.urls')),
+    path('thanks', TemplateView.as_view(template_name='thanks.html'), name='thanks')
 ]
 
 if settings.DEBUG:
