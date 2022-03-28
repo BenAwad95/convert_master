@@ -16,8 +16,8 @@ def home(request):
             docx_file_path = fs.path(docx_file)
             # start convert
             convert(docx_file_path, f'{settings.BASE_DIR}\\media\\word2pdf-app\\pdfs\\{filename}.pdf')
-            url = f'\\media\\word2pdf-app\\pdfs\\{filename}.pdf'
-            return render(request, 'word2pdf\home.html', {'form': form, 'done': True, 'url': url})
+            urls = [f'\\media\\word2pdf-app\\pdfs\\{filename}.pdf']
+            return render(request, 'thanks.html', context={'urls': urls})
         else:
             return render(request, 'word2pdf\home.html', {'form': form})
     form = Word2pdfForm()
