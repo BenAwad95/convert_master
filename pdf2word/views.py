@@ -18,8 +18,8 @@ def home(request):
             cv = Converter(pdf_file_path)
             cv.convert(f'{settings.BASE_DIR}\\media\\pdf2word-app\\docxs\\{filename}.docx')
             cv.close()
-            url = f"media\\pdf2word-app\\docxs\\{filename}.docx"
-            return render(request, 'pdf2word\\home.html', {'form': form, 'done': True, 'url': url})
+            urls = [f"media\\pdf2word-app\\docxs\\{filename}.docx"]
+            return render(request, 'thanks.html', context={'urls': urls})
         else:
             return render(request, 'pdf2word\\home.html', {'form': form})
     form = Pdf2wordForm()
