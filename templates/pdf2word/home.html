@@ -10,6 +10,12 @@
         <p>
             {{ f }}
             <label for="id_{{ f.name }}">Select {{f.label}}...</label>
+            {% if f.errors %}
+                {% for e in f.errors %}
+                    <span>{{ e }}</span>
+                    <br>
+                {% endfor %}
+            {% endif %}
         </p>
         {% endfor %}
         <button type="submit">Convert</button>
