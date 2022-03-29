@@ -6,6 +6,7 @@
         <p>Your files ready for downloading</p>
         <ul>
             {% for url in urls %}
+            <p>{{ url }}</p>
                 <li><a href="{{ url }}" download>Download</a></li>
             {% endfor %}
         </ul>
