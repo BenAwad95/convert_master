@@ -29,7 +29,6 @@ main{
 main .btn-primary{
     width: fit-content;
     margin: 0;
-    margin-left: 1rem;
     background: #fa991c;
     color: #032539;
     text-decoration: none;
@@ -38,6 +37,12 @@ main .btn-primary{
 main .btn-primary:hover{
     background: #1c768f;
     color: #fbf3f2;
+}
+
+main #main-page-btn{
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
 }
 
 #apps-list{

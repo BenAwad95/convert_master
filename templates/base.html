@@ -15,7 +15,7 @@
     </header>
     <main>
         {% if form %}
-        <a href="{% url 'control:home' %}" class='btn-primary'>Main Page</a>
+        <a id="main-page-btn" href="{% url 'control:home' %}" class='btn-primary'>Main Page</a>
         {% endif %}
         {% block content %}
             <div id="apps-list">
